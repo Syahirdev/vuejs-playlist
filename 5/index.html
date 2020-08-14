@@ -8,10 +8,10 @@
 		<ul>
 			<li><a href="../" class="home">HOMEPAGE</a></li>
 			<li><a href="../1">1 - Vue Instances</a></li>
-			<li><a href="../2" class="active">2 - Data & Methods</a></li>
-			<li><a href="../3">3</a></li>
-			<li><a href="../4">4</a></li>
-			<li><a href="../5">5</a></li>
+			<li><a href="../2">2 - Data & Methods</a></li>
+			<li><a href="../3">3 - Data Binding</a></li>
+			<li><a href="../4">4 - Events</a></li>
+			<li><a href="../5" class="active">5 - Events Modifier</a></li>
 			<li><a href="../6">6</a></li>
 			<li><a href="../7">7</a></li>
 			<li><a href="../8">8</a></li>
@@ -40,9 +40,17 @@
 		</ul>
 
 		<div id="vue-app" style="margin-left: 25%; padding: 1px 16px; height: 1000px;">
-			<h1>{{ greet('afternoon') }}</h1>
-			<p>Name: {{ name }}</p>
-			<p>Job: {{ job }}</p>
+			<h1>Events</h1>
+			<button v-on:click.once="add(1)">Add a Year</button>
+			<button @click="subtract(1)">Subtract a Year</button>
+			Add a Year only work once! <br /><br />
+			<button v-on:dblclick="add(10)">Add 10 Years</button>
+			<button @dblclick="subtract(10)">Subtract 10 Years</button>
+			<br />
+			<p>My age is {{age}}</p>
+			<br />
+			<a v-on:click.prevent="click" href="http://www.google.com/">Google Website</a>
+			//prevent from doing its behavior (go to a href google.com)
 		</div>
 
 		<script src="app.js"></script>
