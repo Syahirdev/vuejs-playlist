@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="../sidenav.css" />
 	</head>
 	<body>
 		<ul>
@@ -13,39 +13,27 @@
 			<li><a href="../4">4 - Events</a></li>
 			<li><a href="../5">5 - Events Modifier</a></li>
 			<li><a href="../6" class="active">6 - Keyboard Events</a></li>
-			<li><a href="../7">7</a></li>
-			<li><a href="../8">8</a></li>
-			<li><a href="../9">9</a></li>
-			<li><a href="../10">10</a></li>
-			<li><a href="../11">11</a></li>
-			<li><a href="../12">12</a></li>
-			<li><a href="../13">13</a></li>
-			<li><a href="../14">14</a></li>
-			<li><a href="../15">15</a></li>
-			<li><a href="../16">16</a></li>
-			<li><a href="../17">17</a></li>
-			<li><a href="../18">18</a></li>
-			<li><a href="../19">19</a></li>
-			<li><a href="../20">20</a></li>
-			<li><a href="../21">21</a></li>
-			<li><a href="../22">22</a></li>
-			<li><a href="../23">23</a></li>
-			<li><a href="../24">24</a></li>
-			<li><a href="../25">25</a></li>
-			<li><a href="../26">26</a></li>
-			<li><a href="../27">27</a></li>
-			<li><a href="../28">28</a></li>
-			<li><a href="../29">29</a></li>
-			<li><a href="../30">30</a></li>
+			<li><a href="../7">7 - 2-Way Data Binding</a></li>
+			<li><a href="../8">8 - Computed Properties</a></li>
+			<li><a href="../9">9 - Dynamic CSS</a></li>
+			<li><a href="../10">10 - Conditionals</a></li>
+			<li><a href="../11">11 - Looping</a></li>
+			<li><a href="../12">12 - Punchbag Game</a></li>
+			<li><a href="../13">13 - Multiple Vue Instances</a></li>
+			<li><a href="../14">14 - Components</a></li>
+			<li><a href="../15">15 - Refs</a></li>
+			<li><a href="../vue-cli">Vue CLI</a></li>
 		</ul>
 
 		<div id="vue-app" style="margin-left: 25%; padding: 1px 16px; height: 1000px;">
-			<h1>Keyboard Events</h1>
+			<h1>Keyboard Events (Check console.log)</h1>
 			<label for="">Name: </label>
 			<input type="text" v-on:keyup.enter="logName" />
+			<p>Name will log after enter key pressed</p>
 			<br /><br />
 			<label for="">Age: </label>
 			<input type="text" v-on:keyup.up.enter="logAge" />
+			<p>Age will log after enter || up key pressed</p>
 		</div>
 
 		<script src="app.js"></script>

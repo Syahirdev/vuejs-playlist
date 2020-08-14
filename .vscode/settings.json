@@ -1,9 +1,6 @@
 {
   "files.exclude": {
     ".vscode": true,
-    "README.md": true,
-    "app.js": true,
-    "index.html": true,
-    "styles.css": true
+    "README.md": true
   }
 }
