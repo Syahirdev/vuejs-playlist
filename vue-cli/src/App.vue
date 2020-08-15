@@ -1,5 +1,6 @@
 <template>
 	<div v-theme:column="'light'">
+		<app-header></app-header>
 		<router-view></router-view>
 	</div>
 </template>
@@ -8,17 +9,20 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable vue/no-unused-components */
 
-// import addBlog from './components/addBlog.vue';
+import addBlog from './components/addBlog.vue';
 import showBlogs from './components/showBlogs.vue';
 import listBlogs from './components/listBlogs.vue';
+import header from './components/header.vue';
+
 export default {
 	data() {
 		return {};
 	},
 	components: {
-		// 'add-blog': addBlog,
+		'add-blog': addBlog,
 		'show-blogs': showBlogs,
 		'list-blogs': listBlogs,
+		'app-header': header,
 	},
 	methods: {},
 	directives: {
