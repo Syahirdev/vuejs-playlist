@@ -11,6 +11,7 @@
 
 <script>
 const axios = require('axios');
+import searchMixin from '../mixins/searchMixin.js';
 
 export default {
 	data() {
@@ -26,21 +27,8 @@ export default {
 			this.blogs = response.data.slice(0, 10);
 		});
 	},
-	computed: {
-		filteredBlogs: function() {
-			return this.blogs.filter((blog) => {
-				return blog.title.toLowerCase().match(this.search.toLowerCase());
-			});
-		},
-	},
-	filters: {
-		toUpperCase(value) {
-			return value.toUpperCase();
-		},
-		snippet(value) {
-			return value.slice(0, 100) + '...';
-		},
-	},
+	computed: {},
+	filters: {},
 	directives: {
 		/* eslint-disable no-unused-vars */
 		rainbow: {
@@ -53,6 +41,7 @@ export default {
 			},
 		},
 	},
+	mixins: [searchMixin],
 };
 </script>
 
