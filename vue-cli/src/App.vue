@@ -1,38 +1,34 @@
 <template>
 	<div>
-		<app-header :title="title" @changeTitle="updateTitle($event)"></app-header>
-		<app-person :persons="persons"></app-person>
-		<app-footer :title="title"></app-footer>
+		<form-helper>
+			<div slot="form-header">
+				<h3>This is Form-Header</h3>
+				<p>Information about the form, maybe?</p>
+			</div>
+			<div slot="form-fields">
+				<input type="text" placeholder="name" required /><br />
+				<input type="password" placeholder="password" required />
+			</div>
+			<div slot="form-controls">
+				<button @click="handleSubmit">Submit</button>
+			</div>
+		</form-helper>
 	</div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
-import Person from './components/Persons.vue';
+import formHelper from './components/formHelper.vue';
 export default {
 	components: {
-		'app-header': Header,
-		'app-footer': Footer,
-		'app-person': Person,
+		'form-helper': formHelper,
 	},
 	data() {
 		return {
-			persons: [
-				{ name: 'Syahir', specialty: 'Vue Components', show: false },
-				{ name: 'Syazmi', specialty: 'HTML Wizardry', show: false },
-				{ name: 'Syakira', specialty: 'Click Events', show: false },
-				{ name: 'Abu', specialty: 'Conditionals', show: false },
-				{ name: 'Ali', specialty: 'Webpack', show: false },
-				{ name: 'Ahmad', specialty: 'Data Diggin', show: false },
-			],
-			title: 'Primitive Title?!',
+			title: 'Im a dynamic slot title',
 		};
 	},
 	methods: {
-		updateTitle: function(event) {
-			this.title = event;
-		},
+		handleSubmit: function() {},
 	},
 };
 </script>
