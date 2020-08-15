@@ -1,27 +1,25 @@
 <template>
-	<div id="app">
-		<h1>{{ title }}</h1>
-		<persons></persons>
+	<div>
+		<app-header></app-header>
+		<app-person></app-person>
+		<app-footer></app-footer>
 	</div>
 </template>
 
 <script>
-import Persons from './Persons.vue';
-
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import Person from './components/Persons.vue';
 export default {
 	components: {
-		persons: Persons,
+		'app-header': Header,
+		'app-footer': Footer,
+		'app-person': Person,
 	},
 	data() {
-		return {
-			title: 'My First App!',
-		};
+		return {};
 	},
 };
 </script>
 
-<style scoped>
-h1 {
-	color: purple;
-}
-</style>
+<style></style>
