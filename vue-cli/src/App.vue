@@ -17,6 +17,23 @@ export default {
 		'show-blog': showBlog,
 	},
 	methods: {},
+	directives: {
+		/* eslint-disable no-unused-vars */
+		theme: {
+			bind(el, binding, vnode) {
+				if (binding.value == 'light') {
+					el.style.background = 'white';
+				} else {
+					el.style.background = '#1a1a1a';
+					el.style.color = 'white';
+				}
+				if (binding.arg == 'column') {
+					//el.style.background = '#ddd';
+					el.style.padding = '20px';
+				}
+			},
+		},
+	},
 };
 </script>
 

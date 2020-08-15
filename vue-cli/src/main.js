@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Vue from 'vue';
 import App from './App.vue';
 Vue.config.productionTip = false;
@@ -6,9 +7,8 @@ Vue.config.productionTip = false;
 // const axios = require('axios').default;
 // Vue.prototype.$http = axios;
 
-/* eslint-disable no-unused-vars */
+//fires when the directives is bound to the element e.g. bind to h2 at showBlog.vue
 Vue.directive('rainbow', {
-	//fires when the directives is bound to the element e.g. bind to h2 at showBlog.vue
 	bind(el, binding, vnode) {
 		el.style.color =
 			'#' +
@@ -32,9 +32,8 @@ Vue.directive('theme', {
 		}
 	},
 });
-/* eslint-disable no-unused-vars */
 
-//Filters
+// //Filters
 Vue.filter('toUpperCase', (value) => value.toUpperCase());
 Vue.filter('snippet', (value) => value.slice(0, 100) + '...');
 
