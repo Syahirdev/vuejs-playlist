@@ -1,7 +1,10 @@
 <template>
-	<ul>
-		<li v-for="person in persons" :key="person.id">{{ person }}</li>
-	</ul>
+	<div>
+		<h1>List of My Friends</h1>
+		<ul>
+			<li v-for="person in persons" :key="person.id">{{ person }}</li>
+		</ul>
+	</div>
 </template>
 
 <script>
@@ -14,4 +17,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+h1 {
+	color: goldenrod;
+}
+</style>
