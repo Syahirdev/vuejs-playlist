@@ -6,12 +6,13 @@
 			<router-link :to="'/blog/' + blog.id" style="text-decoration: none;">
 				<h2 v-rainbow>{{ blog.title | toUpperCase }}</h2>
 			</router-link>
-			<article>{{ blog.body | snippet }}</article>
+			<article>{{ blog.content | snippet }}</article>
 		</div>
 	</div>
 </template>
 
 <script>
+/* eslint-disable no-unused-vars */
 const axios = require('axios');
 import searchMixin from '../mixins/searchMixin.js';
 
@@ -25,14 +26,20 @@ export default {
 	components: {},
 	methods: {},
 	created() {
-		axios.get('https://jsonplaceholder.typicode.com/posts').then((response) => {
-			this.blogs = response.data.slice(0, 10);
+		axios.get('https://vuejs-aefc9.firebaseio.com/posts.json').then((obj) => {
+			var blogsArray = [];
+
+			for (let key in obj.data) {
+				obj.data[key].id = key;
+				blogsArray.push(obj.data[key]);
+			}
+
+			this.blogs = blogsArray;
 		});
 	},
 	computed: {},
 	filters: {},
 	directives: {
-		/* eslint-disable no-unused-vars */
 		rainbow: {
 			bind(el, binding, vnode) {
 				el.style.color =
