@@ -1,12 +1,13 @@
 <template>
 	<div v-theme:column="'light'">
-		<!-- <add-blog></add-blog> -->
-		<show-blogs></show-blogs>
-		<list-blogs></list-blogs>
+		<router-view></router-view>
 	</div>
 </template>
 
 <script>
+/* eslint-disable no-unused-vars */
+/* eslint-disable vue/no-unused-components */
+
 // import addBlog from './components/addBlog.vue';
 import showBlogs from './components/showBlogs.vue';
 import listBlogs from './components/listBlogs.vue';
@@ -21,7 +22,6 @@ export default {
 	},
 	methods: {},
 	directives: {
-		/* eslint-disable no-unused-vars */
 		theme: {
 			bind(el, binding, vnode) {
 				if (binding.value == 'light') {
