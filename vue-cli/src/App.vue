@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<app-header :title="title"></app-header>
+		<app-header :title="title" @changeTitle="updateTitle($event)"></app-header>
 		<app-person :persons="persons"></app-person>
 		<app-footer :title="title"></app-footer>
 	</div>
@@ -28,6 +28,11 @@ export default {
 			],
 			title: 'Primitive Title?!',
 		};
+	},
+	methods: {
+		updateTitle: function(event) {
+			this.title = event;
+		},
 	},
 };
 </script>
