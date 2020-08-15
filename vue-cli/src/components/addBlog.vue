@@ -8,14 +8,37 @@
 
 			<label for="">Blog Content:</label>
 			<textarea v-model="blog.content"></textarea>
+			<div id="checkboxes">
+				<input type="checkbox" value="Invisibility" v-model="blog.categories" />
+				<label for="">Invisibility</label><br />
+
+				<input type="checkbox" value="Immortal" v-model="blog.categories" />
+				<label for="">Immortal</label><br />
+
+				<input type="checkbox" value="Sexy" v-model="blog.categories" />
+				<label for="">Sexy</label><br />
+
+				<input type="checkbox" value="Speed" v-model="blog.categories" />
+				<label for="">Speed</label><br />
+
+				<input type="checkbox" value="Element Master" v-model="blog.categories" />
+				<label for="">Element Master</label>
+			</div>
 		</form>
 
 		<div id="preview">
 			<h3>Preview Blog</h3>
+
 			<p>Blog Title:</p>
 			<p>` {{ blog.title }}</p>
+
 			<p>Blog Content:</p>
 			<p>` {{ blog.content }}</p>
+
+			<p>Blog Categories:</p>
+			<ul>
+				<li v-for="category in blog.categories" :key="category.id">{{ category }}</li>
+			</ul>
 		</div>
 	</div>
 </template>
@@ -27,6 +50,7 @@ export default {
 			blog: {
 				title: '',
 				content: '',
+				categories: [],
 			},
 		};
 	},
@@ -60,5 +84,13 @@ textarea {
 }
 h3 {
 	margin-top: 10px;
+}
+#checkboxes input {
+	display: inline-block;
+	margin-right: 10px;
+}
+#checkboxes label {
+	display: inline-block;
+	margin-right: 10px;
 }
 </style>
