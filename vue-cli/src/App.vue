@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-theme:column="'light'">
 		<!-- <add-blog></add-blog> -->
 		<show-blog></show-blog>
 	</div>
