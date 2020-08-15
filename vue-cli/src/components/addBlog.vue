@@ -84,16 +84,10 @@ export default {
 	components: {},
 	methods: {
 		post: function() {
-			axios
-				.post('https://jsonplaceholder.typicode.com/posts', {
-					title: this.blog.title,
-					body: this.blog.content,
-					userId: 1,
-				})
-				.then((data) => {
-					console.log(data);
-					this.submitted = true;
-				});
+			axios.post('https://vuejs-aefc9.firebaseio.com/posts.json', this.blog).then((data) => {
+				console.log(data);
+				this.submitted = true;
+			});
 		},
 	},
 };
