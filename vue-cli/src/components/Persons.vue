@@ -25,6 +25,26 @@ export default {
 			this.persons.pop();
 		},
 	},
+
+	//life-cycle-hooks
+	beforeCreate() {
+		alert('beforeCreate');
+	},
+	create() {
+		alert('created | to fetch any data');
+	},
+	beforeMount() {
+		alert('beforeMount');
+	},
+	mounted() {
+		alert('mounted | to manipulate the DOM');
+	},
+	beforeUpdate() {
+		alert('beforeUpdate');
+	},
+	updated() {
+		alert('updated | act after any data changes');
+	},
 };
 </script>
 <style scoped>

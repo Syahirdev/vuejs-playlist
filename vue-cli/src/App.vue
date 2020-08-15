@@ -2,7 +2,6 @@
 	<div>
 		<app-header :title="title" @changeTitle="updateTitle($event)"></app-header>
 		<app-persons :persons="persons"></app-persons>
-		<app-persons :persons="persons"></app-persons>
 		<!--v-bind data to props ( :name of var in props="Array of data from parent" )-->
 		<app-footer :title="title"></app-footer>
 	</div>
