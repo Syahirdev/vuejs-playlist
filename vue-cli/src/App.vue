@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<app-header></app-header>
-		<app-persons></app-persons>
+		<app-persons :persons="persons"></app-persons
+		><!--v-bind data to props ( :name of var in props="Array of data from parent" )-->
 		<app-footer></app-footer>
 	</div>
 </template>
@@ -13,7 +14,16 @@ import Persons from './components/Persons.vue';
 
 export default {
 	data() {
-		return {};
+		return {
+			persons: [
+				{ name: 'Syahir', speciality: 'Vue Components', show: false },
+				{ name: 'Syazmi', speciality: 'HTML Wizardry', show: false },
+				{ name: 'Syakira', speciality: 'Click Events', show: false },
+				{ name: 'Ali', speciality: 'Conditionals', show: false },
+				{ name: 'Abu', speciality: 'Webpack', show: false },
+				{ name: 'Ahmad', speciality: 'Data Diggin', show: false },
+			],
+		};
 	},
 	components: {
 		'app-header': Header,

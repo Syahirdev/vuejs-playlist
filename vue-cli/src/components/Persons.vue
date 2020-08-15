@@ -10,17 +10,14 @@
 </template>
 <script>
 export default {
+	props: {
+		persons: {
+			type: Array,
+			required: true,
+		},
+	}, //receive the data from Parent App.vue
 	data() {
-		return {
-			persons: [
-				{ name: 'Syahir', speciality: 'Vue Components', show: false },
-				{ name: 'Syazmi', speciality: 'HTML Wizardry', show: false },
-				{ name: 'Syakira', speciality: 'Click Events', show: false },
-				{ name: 'Ali', speciality: 'Conditionals', show: false },
-				{ name: 'Abu', speciality: 'Webpack', show: false },
-				{ name: 'Ahmad', speciality: 'Data Diggin', show: false },
-			],
-		};
+		return {};
 	},
 };
 </script>
