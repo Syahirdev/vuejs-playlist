@@ -1,16 +1,26 @@
 <template>
 	<header>
-		<h1>{{ title }}</h1>
+		<h1 @click="changeTitle">{{ title }}</h1>
 	</header>
 </template>
 
 <script>
 export default {
+	props: {
+		title: {
+			type: String,
+		},
+	},
 	components: {},
 	data() {
 		return {
-			title: 'Vue App!',
+			//title: 'Vue App!',
 		};
+	},
+	methods: {
+		changeTitle: function() {
+			this.title = 'Changed the primitive title :O';
+		},
 	},
 };
 </script>

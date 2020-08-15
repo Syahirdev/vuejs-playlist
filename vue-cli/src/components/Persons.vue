@@ -6,6 +6,7 @@
 				<h3 v-show="person.show">{{ person.specialty }}</h3>
 			</li>
 		</ul>
+		<button @click="deletePerson">Delete</button>
 	</div>
 </template>
 
@@ -21,7 +22,11 @@ export default {
 	data() {
 		return {};
 	},
-	methods: {},
+	methods: {
+		deletePerson: function() {
+			this.persons.pop();
+		},
+	},
 };
 </script>
 

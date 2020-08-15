@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<app-header></app-header>
+		<app-header :title="title"></app-header>
 		<app-person :persons="persons"></app-person>
-		<app-footer></app-footer>
+		<app-footer :title="title"></app-footer>
 	</div>
 </template>
 
@@ -26,6 +26,7 @@ export default {
 				{ name: 'Ali', specialty: 'Webpack', show: false },
 				{ name: 'Ahmad', specialty: 'Data Diggin', show: false },
 			],
+			title: 'Primitive Title?!',
 		};
 	},
 };
