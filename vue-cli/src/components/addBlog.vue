@@ -2,7 +2,7 @@
 	<div id="add-blog">
 		<h2>Add a New Blog Post</h2>
 
-		<form action="">
+		<form action="" v-if="!submitted">
 			<label for="">Blog Title:</label>
 			<input type="text" v-model.lazy="blog.title" required />
 
@@ -32,7 +32,12 @@
 				<label for="">Element Master</label>
 				<br />
 			</div>
+			<button @click.prevent="post">Add Blog</button>
 		</form>
+		<div id="container" style="background: seagreen; color:#fff" v-if="submitted">
+			<h3>Thanks for adding new blog!</h3>
+			<p>Have a nice day! :D</p>
+		</div>
 
 		<div id="preview">
 			<h3>Preview Blog</h3>
@@ -62,6 +67,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
 	data() {
 		return {
@@ -72,10 +78,24 @@ export default {
 				author: '',
 			},
 			authors: ['Syahir', 'Syazmi', 'Syakira', '<3'],
+			submitted: false,
 		};
 	},
 	components: {},
-	methods: {},
+	methods: {
+		post: function() {
+			axios
+				.post('https://jsonplaceholder.typicode.com/posts', {
+					title: this.blog.title,
+					body: this.blog.content,
+					userId: 1,
+				})
+				.then((data) => {
+					console.log(data);
+					this.submitted = true;
+				});
+		},
+	},
 };
 </script>
 
