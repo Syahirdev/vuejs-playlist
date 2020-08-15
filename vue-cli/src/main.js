@@ -34,6 +34,10 @@ Vue.directive('theme', {
 });
 /* eslint-disable no-unused-vars */
 
+//Filters
+Vue.filter('toUpperCase', (value) => value.toUpperCase());
+Vue.filter('snippet', (value) => value.slice(0, 100) + '...');
+
 new Vue({
 	render: (h) => h(App),
 }).$mount('#app');
