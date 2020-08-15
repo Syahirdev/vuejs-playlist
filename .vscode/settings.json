@@ -1,6 +1,10 @@
 {
   "files.exclude": {
     ".vscode": true,
-    "README.md": true
+    "README.md": true,
+    "styles.css": true,
+    "sidenav.css": true,
+    "index.html": true,
+    "app.js": true
   }
 }
