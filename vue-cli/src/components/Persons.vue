@@ -11,19 +11,17 @@
 
 <script>
 export default {
+	props: {
+		persons: {
+			type: Array,
+			required: true,
+		},
+	},
 	components: {},
 	data() {
-		return {
-			persons: [
-				{ name: 'Syahir', specialty: 'Vue Components', show: false },
-				{ name: 'Syazmi', specialty: 'HTML Wizardry', show: false },
-				{ name: 'Syakira', specialty: 'Click Events', show: false },
-				{ name: 'Abu', specialty: 'Conditionals', show: false },
-				{ name: 'Ali', specialty: 'Webpack', show: false },
-				{ name: 'Ahmad', specialty: 'Data Diggin', show: false },
-			],
-		};
+		return {};
 	},
+	methods: {},
 };
 </script>
 

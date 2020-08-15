@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<app-header></app-header>
-		<app-person></app-person>
+		<app-person :persons="persons"></app-person>
 		<app-footer></app-footer>
 	</div>
 </template>
@@ -17,7 +17,16 @@ export default {
 		'app-person': Person,
 	},
 	data() {
-		return {};
+		return {
+			persons: [
+				{ name: 'Syahir', specialty: 'Vue Components', show: false },
+				{ name: 'Syazmi', specialty: 'HTML Wizardry', show: false },
+				{ name: 'Syakira', specialty: 'Click Events', show: false },
+				{ name: 'Abu', specialty: 'Conditionals', show: false },
+				{ name: 'Ali', specialty: 'Webpack', show: false },
+				{ name: 'Ahmad', specialty: 'Data Diggin', show: false },
+			],
+		};
 	},
 };
 </script>
