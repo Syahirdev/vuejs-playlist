@@ -8,6 +8,13 @@
 
 			<label for="">Blog Content:</label>
 			<textarea v-model="blog.content"></textarea>
+
+			<label for="">Author:</label>
+			<select v-model="blog.author">
+				<option v-for="author in authors" :key="author.id">{{ author }}</option>
+			</select>
+
+			<label for="">Categories</label>
 			<div id="checkboxes">
 				<input type="checkbox" value="Invisibility" v-model="blog.categories" />
 				<label for="">Invisibility</label><br />
@@ -23,22 +30,33 @@
 
 				<input type="checkbox" value="Element Master" v-model="blog.categories" />
 				<label for="">Element Master</label>
+				<br />
 			</div>
 		</form>
 
 		<div id="preview">
 			<h3>Preview Blog</h3>
 
-			<p>Blog Title:</p>
-			<p>` {{ blog.title }}</p>
+			<div id="container">
+				<p>Blog Title:</p>
+				<p>` {{ blog.title }}</p>
+			</div>
+			<div id="container">
+				<p>Blog Content:</p>
+				<p>` {{ blog.content }}</p>
+			</div>
 
-			<p>Blog Content:</p>
-			<p>` {{ blog.content }}</p>
+			<div id="container">
+				<p>Author:</p>
+				<p>` {{ blog.author }}</p>
+			</div>
 
-			<p>Blog Categories:</p>
-			<ul>
-				<li v-for="category in blog.categories" :key="category.id">{{ category }}</li>
-			</ul>
+			<div id="container">
+				<p>Categories:</p>
+				<ul>
+					<li v-for="category in blog.categories" :key="category.id">{{ category }}</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </template>
@@ -51,7 +69,9 @@ export default {
 				title: '',
 				content: '',
 				categories: [],
+				author: '',
 			},
+			authors: ['Syahir', 'Syazmi', 'Syakira', '<3'],
 		};
 	},
 	components: {},
@@ -80,6 +100,7 @@ textarea {
 #preview {
 	padding: 10px 20px;
 	border: 1px dotted #ccc;
+	border-radius: 10px;
 	margin: 30px 0;
 }
 h3 {
@@ -92,5 +113,14 @@ h3 {
 #checkboxes label {
 	display: inline-block;
 	margin-right: 10px;
+}
+#container {
+	border: 1px dotted #aaa;
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+#container p {
+	margin: 5px;
 }
 </style>
