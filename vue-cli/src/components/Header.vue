@@ -1,18 +1,28 @@
 <template>
 	<header>
-		<h1>{{ title }}</h1>
+		<h1 @click="changeTitle">{{ title }}</h1>
 	</header>
 </template>
 
 <script>
 export default {
+	props: {
+		title: {
+			type: String,
+		},
+	},
 	data() {
 		return {
-			title: 'Vue App',
+			//title: 'Vue App',
 		};
 	},
 	components: {},
-	methods: {},
+	methods: {
+		changeTitle: function() {
+			this.title = 'Title Changed! Whooo...';
+			this.$emit('changeTitle', this.title);
+		},
+	},
 };
 </script>
 

@@ -1,9 +1,10 @@
 <template>
 	<div>
-		<app-header></app-header>
-		<app-persons :persons="persons"></app-persons
-		><!--v-bind data to props ( :name of var in props="Array of data from parent" )-->
-		<app-footer></app-footer>
+		<app-header :title="title" @changeTitle="updateTitle($event)"></app-header>
+		<app-persons :persons="persons"></app-persons>
+		<app-persons :persons="persons"></app-persons>
+		<!--v-bind data to props ( :name of var in props="Array of data from parent" )-->
+		<app-footer :title="title"></app-footer>
 	</div>
 </template>
 
@@ -23,6 +24,7 @@ export default {
 				{ name: 'Abu', speciality: 'Webpack', show: false },
 				{ name: 'Ahmad', speciality: 'Data Diggin', show: false },
 			],
+			title: 'Vue Titles',
 		};
 	},
 	components: {
@@ -30,7 +32,11 @@ export default {
 		'app-footer': Footer,
 		'app-persons': Persons,
 	},
-	methods: {},
+	methods: {
+		updateTitle: function(data) {
+			this.title = data;
+		},
+	},
 };
 </script>
 

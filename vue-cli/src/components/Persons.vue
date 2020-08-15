@@ -6,6 +6,7 @@
 				<h3 v-show="person.show">{{ person.speciality }}</h3>
 			</li>
 		</ul>
+		<button @click="deletePerson">Delete!</button>
 	</div>
 </template>
 <script>
@@ -18,6 +19,11 @@ export default {
 	}, //receive the data from Parent App.vue
 	data() {
 		return {};
+	},
+	methods: {
+		deletePerson: function() {
+			this.persons.pop();
+		},
 	},
 };
 </script>
