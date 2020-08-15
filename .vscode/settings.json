@@ -1,16 +1,16 @@
 {
   "files.exclude": {
     ".vscode": true,
-    "README.md": true,
-    "styles.css": true,
-    "sidenav.css": true,
+    "app.js": true,
     "index.html": true,
-    "vue-cli\\node_modules": true,
+    "README.md": true,
+    "sidenav.css": true,
+    "styles.css": true,
     "vue-cli\\.gitignore": true,
     "vue-cli\\babel.config.js": true,
     "vue-cli\\package.json": true,
-    "vue-cli\\package-lock.json": true,
     "vue-cli\\README.md": true,
-    "app.js": true
+    "vue-cli\\package-lock.json": true,
+    "vue-cli\\node_modules": true
   }
 }
